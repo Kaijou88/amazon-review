@@ -16,7 +16,6 @@ public class SimpleReader implements Reader {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-        records.remove(0);
         return records;
     }
 }
