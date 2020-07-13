@@ -7,20 +7,22 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class CsvFileReader implements Reader {
+public class CsvFileParser implements Parser {
     @Override
-    public List read(String csvFile) {
-        CSVReader reader = null;
+    public List parse(String csvFile, boolean isHeader) {
         List<List<String>> records = new ArrayList<>();
         try {
-            char charThatWillNotAppearInText = 127;
-            reader = new CSVReader(new FileReader(csvFile), ',', charThatWillNotAppearInText);
+            char charThatWillNotAppear = 127;
+            CSVReader reader = new CSVReader(new FileReader(csvFile), ',', charThatWillNotAppear);
             String[] values = null;
             while ((values = reader.readNext()) != null) {
                 records.add(Arrays.asList(values));
             }
         } catch (IOException e) {
             e.printStackTrace();
+        }
+        if (isHeader) {
+            records.remove(0);
         }
         return records;
     }
