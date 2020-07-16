@@ -1,22 +1,24 @@
 package com.spring.boot.amazon.model;
 
+import java.time.LocalDateTime;
+
 public class Review {
-    private String id;
+    private Long id;
     private String productId;
     private String userId;
     private String profileName;
-    private String helpfulnessNumerator;
-    private String helpfulnessDenominator;
-    private String score;
-    private String time;
+    private Long helpfulnessNumerator;
+    private Long helpfulnessDenominator;
+    private Long score;
+    private LocalDateTime time;
     private String summary;
     private String text;
 
-    public String getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -44,35 +46,35 @@ public class Review {
         this.profileName = profileName;
     }
 
-    public String getHelpfulnessNumerator() {
+    public Long getHelpfulnessNumerator() {
         return helpfulnessNumerator;
     }
 
-    public void setHelpfulnessNumerator(String helpfulnessNumerator) {
+    public void setHelpfulnessNumerator(Long helpfulnessNumerator) {
         this.helpfulnessNumerator = helpfulnessNumerator;
     }
 
-    public String getHelpfulnessDenominator() {
+    public Long getHelpfulnessDenominator() {
         return helpfulnessDenominator;
     }
 
-    public void setHelpfulnessDenominator(String helpfulnessDenominator) {
+    public void setHelpfulnessDenominator(Long helpfulnessDenominator) {
         this.helpfulnessDenominator = helpfulnessDenominator;
     }
 
-    public String getScore() {
+    public Long getScore() {
         return score;
     }
 
-    public void setScore(String score) {
+    public void setScore(Long score) {
         this.score = score;
     }
 
-    public String getTime() {
+    public LocalDateTime getTime() {
         return time;
     }
 
-    public void setTime(String time) {
+    public void setTime(LocalDateTime time) {
         this.time = time;
     }
 

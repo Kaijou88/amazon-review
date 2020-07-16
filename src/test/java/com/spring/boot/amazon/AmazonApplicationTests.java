@@ -12,9 +12,10 @@ import java.util.List;
 
 @SpringBootTest
 public class AmazonApplicationTests {
-    private static final String ACTUAL_FILE = "C:\\Users\\mfran\\Downloads\\Reviews.csv";
-    private static final String TEST_EMPTY_FILE = "C:\\Users\\mfran\\Downloads\\ReviewsTest.csv";
-    private static final String FILE_DOES_NOT_EXIST = "C:\\Users\\mfran\\Downloads\\DoesNotExist.csv";
+    private static final String ACTUAL_FILE = "./src/test/resources/Reviews.csv";
+    private static final String FILE_WITHOUT_HEAD = "./src/test/resources/ReviewsWithoutHead.csv";
+    private static final String TEST_EMPTY_FILE = "./src/test/resources/ReviewsTest.csv";
+    private static final String FILE_DOES_NOT_EXIST = "./src/test/resources/DoesNotExist.csv";
     private static final List<String> EMPTY_LIST_RESULT = Collections.EMPTY_LIST;
 
     @Test
@@ -54,8 +55,8 @@ public class AmazonApplicationTests {
 
     @Test
     public void readFileUsingCsvFileParserWithoutHeader() {
-        long actualResult = new CsvFileParser().parse(ACTUAL_FILE, false).size();
+        long actualResult = new CsvFileParser().parse(FILE_WITHOUT_HEAD, false).size();
         Assert.assertEquals("Test failed! You should returned actual size.",
-                568455, actualResult);
+                568454, actualResult);
     }
 }

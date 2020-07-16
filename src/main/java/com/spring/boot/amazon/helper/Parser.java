@@ -4,5 +4,5 @@ import com.spring.boot.amazon.model.Review;
 import java.util.List;
 
 public interface Parser {
-    List<Review> parse(String file, boolean isHeader);
+    List<Review> parse(String fileName, boolean isHeader);
 }
